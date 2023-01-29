@@ -1,10 +1,10 @@
-const availChoices = ["Rock", "Paper", "Scissor"];
+const availChoices = ["Rock", "Paper", "Scissors"];
 let playerChoice = "";
 let computerChoice = "";
-const playerEl = document.getElementById("player")
-const computerEl = document.getElementById("computer")
-const popupEl = document.getElementById("popup-el")
-let statusEl = document.getElementById("status-el")
+const playerEl = document.getElementById("player");
+const computerEl = document.getElementById("computer");
+const popupEl = document.getElementById("popup-el");
+let statusEl = document.getElementById("status-el");
 
 function generateRandom() {
   computerChoice =
@@ -13,43 +13,49 @@ function generateRandom() {
 }
 
 function rock() {
+  generateRandom();
   playerChoice = "Rock";
-  generateRandom()
-  playerEl.textContent = "Player: " + playerChoice
-  computerEl.textContent = "Computer: " + computerChoice
+  playerEl.textContent = "Player: " + playerChoice;
+  computerEl.textContent = "Computer: " + computerChoice;
   if (playerChoice === computerChoice) {
-    statusEl.textContent = "Draw"
-  } else if (playerChoice === "Rock" && computerChoice === "Paper") {
-    statusEl.textContent = "Computer Win"
-  } else if (playerChoice === "Rock" && computerChoice === "Scissor") {
-    statusEl.textContent = "Player Win"
+    statusEl.textContent = "It's a draw!";
+  } else if (playerChoice === "Rock") {
+    if (computerChoice === "Paper") {
+      statusEl.textContent = "Paper covers rock! Computer Win!";
+    } else {
+      statusEl.textContent = "Rock smashes scissors! You Win!";
+    }
   }
 }
 
 function paper() {
+  generateRandom();
   playerChoice = "Paper";
-  generateRandom()
-  playerEl.textContent = "Player: " + playerChoice
-  computerEl.textContent = "Computer: " + computerChoice
+  playerEl.textContent = "Player: " + playerChoice;
+  computerEl.textContent = "Computer: " + computerChoice;
   if (playerChoice === computerChoice) {
-    statusEl.textContent = "Draw"
-  } else if (playerChoice === "Paper" && computerChoice === "Rock") {
-    statusEl.textContent = "Player Win"
-  } else if (playerChoice === "Paper" && computerChoice === "Scissor") {
-    statusEl.textContent = "Computer Win"
+    statusEl.textContent = "It's a draw!";
+  } else if (playerChoice === "Paper") {
+    if (computerChoice === "Scissors") {
+      statusEl.textContent = "Scissors cuts paper! Computer Win!";
+    } else {
+      statusEl.textContent = "Paper covers rock! You Win!";
+    }
   }
 }
 
-function scissor() {
-  generateRandom()
-  playerChoice = "Scissor";
-  playerEl.textContent = "Player: " + playerChoice
-  computerEl.textContent = "Computer: " + computerChoice
+function scissors() {
+  generateRandom();
+  playerChoice = "Scissors";
+  playerEl.textContent = "Player: " + playerChoice;
+  computerEl.textContent = "Computer: " + computerChoice;
   if (playerChoice === computerChoice) {
-    statusEl.textContent = "Draw"
-  } else if (playerChoice === "Scissor" && computerChoice === "Rock") {
-    statusEl.textContent = "Computer Win"
-  } else if (playerChoice === "Scissor" && computerChoice === "Paper") {
-    statusEl.textContent = "Player Win"
+    statusEl.textContent = "It's a draw!";
+  } else if (playerChoice === "Scissors") {
+    if (computerChoice === "Rock") {
+      statusEl.textContent = "Rock smashes scissors! Computer Win!";
+    } else {
+      statusEl.textContent = "Scissors cuts paper! You Win!";
+    }
   }
 }
