@@ -6,24 +6,22 @@ body {
 
 h1 {
   font-family: "Ubuntu", sans-serif;
-  margin: 0;
   color: #ffffff;
-  padding-top: 40px;
-  padding-bottom: 20px;
   font-weight: bolder;
+  margin: 0;
+  padding-top: 60px;
 }
 
 .container {
-  height: 600px;
-  width: auto;
+  height: 550px;
   max-width: 500px;
   background: #918ef4;
-  margin: auto;
+  margin: 0 auto;
 }
 
 @media (min-width: 484px) {
   .container {
-    margin-top: 80px;
+    margin-top: 100px;
     border-radius: 10px;
   }
 }
@@ -50,8 +48,6 @@ button {
   display: block;
   width: 250px;
   height: 50px;
-  margin-left: auto;
-  margin-right: auto;
   font-family: "Mina", sans-serif;
   border: none;
   border-radius: 5px;
@@ -59,5 +55,5 @@ button {
   background-color: #306bac;
   font-size: larger;
   font-weight: 600;
-  margin-top: 10px;
+  margin: 10px auto 0 auto;
 }
